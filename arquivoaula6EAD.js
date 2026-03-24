@@ -18,4 +18,30 @@ const produtos = [
 
 //ATIVIDADE 2 = NOVO ARRAY-NOMES DOS PRODUTOS//
 let ArraydeNomes = produtos.map(produto => produto.nome);
-console.log(`ATIVIDADE 2) ARRAY COM PRODUTOS: ${ArraydeNomes}`);
+console.log(`ATIVIDADE 2: ARRAY COM PRODUTOS: ${ArraydeNomes}`);
+
+//ATIVIDADE 3 = LISTE PRODUTOS MAIORES QUE 0//
+let produtosdisponiveis = produtos
+.filter(produto => produto.estoque > 0)
+.map(produto => produto.nome);
+console.log(`ATIVIDADE 3: PRODUTOS EM ESTOQUE = ${produtosdisponiveis}`);
+
+//ATIVIDADE 4 = LISTE APENAS CATEGORIA ALIMENTOS//
+let categoriaAlimentos = produtos
+.filter(produto => produto.categoria === "Alimentos")
+.map(produto => produto.nome);
+console.log(`ATIVIDADE 4: CATEGORIA ALIMENTOS = ${categoriaAlimentos}`);
+
+//ATIVIDADE 5 = BUSCAR O PRODUTO CAFÉ E EXIBIR COMPLETO//
+let apenascafe = produtos.find(u => u.id === 4);
+console.log("ATIVIDADE 5: PRODUTO CAFÉ COMPLETO =", apenascafe);
+
+//ATIVIDADE 6 = NOVO ARRAY (NOME, PREÇO E 10% DESCONTO)//
+let novoArray = produtos.map(produto => {
+  return {
+    nome: produto.nome,
+    precoorigem: produto.preco,
+    precodesconto: produto.preco * 0.90
+  };
+});
+console.log('ATIVIDADE 6: NOVO ARRAY COM DESCONTO =', novoArray);
