@@ -45,3 +45,24 @@ let novoArray = produtos.map(produto => {
   };
 });
 console.log('ATIVIDADE 6: NOVO ARRAY COM DESCONTO =', novoArray);
+
+//ATIVIDADE 7 = SOMA TOTAL DE UNIDADES EM ESTOQUE (TODOS OS PRODUTOS)//
+let totalEstoque = produtos.reduce((total, produto) => {
+  return total + produto.estoque;
+}, 0);
+console.log(`ATIVIDADE 7: SOMA DO ESTOQUE COM TODOS OS PRODUTOS = ${totalEstoque}`);
+
+//ATIVIDADE 8 = VALOR TOTAL (VALOR * ESTOQUE) E SOMA DE TUDO//
+let totalPreco = produtos.reduce((total, produto) => {
+  return total + (produto.preco * produto.estoque); 
+}, 0);
+console.log(`ATIVIDADE 8: VALOR * ESTOQUE + SOMA DE TODOS OS PRODUTOS = ${totalPreco}`);
+
+//ATIVIDADE 9 = ORDENE OS PRODUTOS(+BARATO PARA +CARO)
+let ordenadoProdutos = produtos
+.sort((a, b) => {return a.preco - b.preco})
+.map(produto => ({
+  nome: produto.nome,
+  preco: produto.preco
+}));
+console.log('ATIVIDADE 9: PRODUTOS BARATO PARA CARO =', ordenadoProdutos);
