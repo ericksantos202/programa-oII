@@ -16,25 +16,32 @@ const produtos = [
   { id: 15, nome: "Chocolate Barra", categoria: "Alimentos", preco: 6.75, estoque: 12, vendidos: 21 }
 ];
 
+console.log(`ATIVIDADES DA AULA 6 EAD - ERICK`);
+console.log();
+
 //ATIVIDADE 2 = NOVO ARRAY-NOMES DOS PRODUTOS//
 let ArraydeNomes = produtos.map(produto => produto.nome);
 console.log(`ATIVIDADE 2: ARRAY COM SOMENTE NOMES DOS PRODUTOS: ${ArraydeNomes}`);
+console.log();
 
 //ATIVIDADE 3 = LISTE PRODUTOS COM ESTOQUE MAIORES QUE 0//
 let produtosdisponiveis = produtos
 .filter(produto => produto.estoque > 0)
 .map(produto => `${produto.nome} = ${produto.estoque}`);
 console.log(`ATIVIDADE 3: PRODUTOS EM ESTOQUE = ${produtosdisponiveis}`);
+console.log();
 
 //ATIVIDADE 4 = LISTE APENAS CATEGORIA ALIMENTOS//
 let categoriaAlimentos = produtos
 .filter(produto => produto.categoria === "Alimentos")
 .map(produto => `${produto.nome} - ${produto.categoria}`);
 console.log(`ATIVIDADE 4: CATEGORIA ALIMENTOS = ${categoriaAlimentos}`);
+console.log();
 
 //ATIVIDADE 5 = BUSCAR O PRODUTO CAFÉ E EXIBIR COMPLETO//
 let apenascafe = produtos.find(u => u.id === 4);
 console.log("ATIVIDADE 5: PRODUTO CAFÉ COMPLETO =", apenascafe);
+console.log();
 
 //ATIVIDADE 6 = NOVO ARRAY (NOME, PREÇO E 10% DESCONTO)//
 let novoArray = produtos.map(produto => {
@@ -45,18 +52,21 @@ let novoArray = produtos.map(produto => {
   };
 });
 console.log('ATIVIDADE 6: NOVO ARRAY COM DESCONTO =', novoArray);
+console.log();
 
 //ATIVIDADE 7 = SOMA TOTAL DE UNIDADES EM ESTOQUE (TODOS OS PRODUTOS)//
 let totalEstoque = produtos.reduce((total, produto) => {
   return total + produto.estoque;
 }, 0);
 console.log(`ATIVIDADE 7: SOMA DO ESTOQUE COM TODOS OS PRODUTOS = ${totalEstoque}`);
+console.log();
 
 //ATIVIDADE 8 = VALOR TOTAL (VALOR * ESTOQUE) E SOMA DE TUDO//
 let totalPreco = produtos.reduce((total, produto) => {
   return total + (produto.preco * produto.estoque); 
 }, 0);
 console.log(`ATIVIDADE 8: VALOR * ESTOQUE + SOMA DE TODOS OS PRODUTOS = ${totalPreco}`);
+console.log();
 
 //ATIVIDADE 9 = ORDENE OS PRODUTOS(+BARATO PARA +CARO)
 let ordenadoProdutos = produtos
@@ -66,6 +76,7 @@ let ordenadoProdutos = produtos
   preco: produto.preco
 }));
 console.log('ATIVIDADE 9: PRODUTOS BARATO PARA CARO =', ordenadoProdutos);
+console.log();
 
 //ATIVIDADE 10 = ORDENE PRODUTOS(+VENDIDO PARA -VENDIDO)//
 let ordenadoVendas = produtos
@@ -75,6 +86,7 @@ let ordenadoVendas = produtos
   vendidos: produto.vendidos
 }));
 console.log('ATIVIDADE 10: PRODUTOS MAIS VENDIDOS PARA MENOS VENDIDOS =', ordenadoVendas);
+console.log();
 
 //ATIVIDADE 11 = DESCUBRA O PRODUTO COM MAIOR QUANT EM ESTOQUE//
 let maiorEstoque = produtos.reduce((acc, curr) => {
@@ -84,6 +96,7 @@ console.log('ATIVIDADE 11: PRODUTO COM MAIOR QUANT EM ESTOQUE =', {
   nome: maiorEstoque.nome,
   estoque: maiorEstoque.estoque
 });
+console.log();
 
 //ATIVIDADE 12 = RELATORIO FINAL (TOTAL DE PRODUTO, COM E SEM ESTOQUE E VALOR TOTAL)//
 let RelatorioFinal = {
