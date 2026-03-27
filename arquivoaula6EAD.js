@@ -18,18 +18,18 @@ const produtos = [
 
 //ATIVIDADE 2 = NOVO ARRAY-NOMES DOS PRODUTOS//
 let ArraydeNomes = produtos.map(produto => produto.nome);
-console.log(`ATIVIDADE 2: ARRAY COM PRODUTOS: ${ArraydeNomes}`);
+console.log(`ATIVIDADE 2: ARRAY COM SOMENTE NOMES DOS PRODUTOS: ${ArraydeNomes}`);
 
-//ATIVIDADE 3 = LISTE PRODUTOS MAIORES QUE 0//
+//ATIVIDADE 3 = LISTE PRODUTOS COM ESTOQUE MAIORES QUE 0//
 let produtosdisponiveis = produtos
 .filter(produto => produto.estoque > 0)
-.map(produto => produto.nome);
+.map(produto => `${produto.nome} = ${produto.estoque}`);
 console.log(`ATIVIDADE 3: PRODUTOS EM ESTOQUE = ${produtosdisponiveis}`);
 
 //ATIVIDADE 4 = LISTE APENAS CATEGORIA ALIMENTOS//
 let categoriaAlimentos = produtos
 .filter(produto => produto.categoria === "Alimentos")
-.map(produto => produto.nome);
+.map(produto => `${produto.nome} - ${produto.categoria}`);
 console.log(`ATIVIDADE 4: CATEGORIA ALIMENTOS = ${categoriaAlimentos}`);
 
 //ATIVIDADE 5 = BUSCAR O PRODUTO CAFÉ E EXIBIR COMPLETO//
@@ -41,7 +41,7 @@ let novoArray = produtos.map(produto => {
   return {
     nome: produto.nome,
     precoorigem: produto.preco,
-    precodesconto: produto.preco * 0.90
+    precodesconto: (produto.preco * 0.90).toFixed(2)
   };
 });
 console.log('ATIVIDADE 6: NOVO ARRAY COM DESCONTO =', novoArray);
@@ -66,3 +66,30 @@ let ordenadoProdutos = produtos
   preco: produto.preco
 }));
 console.log('ATIVIDADE 9: PRODUTOS BARATO PARA CARO =', ordenadoProdutos);
+
+//ATIVIDADE 10 = ORDENE PRODUTOS(+VENDIDO PARA -VENDIDO)//
+let ordenadoVendas = produtos
+.sort((a, b) => {return a.vendidos - b.vendidos})
+.map(produto => ({
+  nome: produto.nome,
+  vendidos: produto.vendidos
+}));
+console.log('ATIVIDADE 10: PRODUTOS MAIS VENDIDOS PARA MENOS VENDIDOS =', ordenadoVendas);
+
+//ATIVIDADE 11 = DESCUBRA O PRODUTO COM MAIOR QUANT EM ESTOQUE//
+let maiorEstoque = produtos.reduce((acc, curr) => {
+  return curr.estoque > acc.estoque ? curr : acc;
+});
+console.log('ATIVIDADE 11: PRODUTO COM MAIOR QUANT EM ESTOQUE =', {
+  nome: maiorEstoque.nome,
+  estoque: maiorEstoque.estoque
+});
+
+//ATIVIDADE 12 = RELATORIO FINAL (TOTAL DE PRODUTO, COM E SEM ESTOQUE E VALOR TOTAL)//
+let RelatorioFinal = {
+  TotalProdutos: produtos.length,
+  ComEstoque: produtos.filter(produto => produto.estoque > 0).length,
+  SemEstoque: produtos.filter(produto => produto.estoque === 0).length,
+  ValorTotal: produtos.reduce((acc, produto) => acc + (produto.preco * produto.estoque), 0).toFixed(2)
+  };
+  console.log('ATIVIDADE 12: RELATÓRIO FINAL =', RelatorioFinal);
