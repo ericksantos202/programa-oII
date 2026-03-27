@@ -106,3 +106,23 @@ let RelatorioFinal = {
   ValorTotal: produtos.reduce((acc, produto) => acc + (produto.preco * produto.estoque), 0).toFixed(2)
   };
   console.log('ATIVIDADE 12: RELATÓRIO FINAL =', RelatorioFinal);
+  console.log();
+
+//ATIVIDADE 13 = MOSTRE OS 3 PRODUTOS MAIS CAROS//
+let rank3caros = [...produtos].sort((a, b) => {return b.preco - a.preco});
+
+console.log('ATIVIDADE 13: RANK DOS 3 PRODUTOS MAIS CAROS:')
+
+let contador = 0;
+for (let produto of rank3caros) {
+  if (contador === 3) break;
+  console.log(` ${produto.nome} - ${produto.preco}`);
+  contador++;
+}
+console.log();
+
+//ATIVIDADE 14 = MOSTRE A MÉDIA DO PREÇO DOS PRODUTOS//
+let somaPreço = produtos.reduce((total, produto) => total + produto.preco, 0);
+let mediaPreço = somaPreço / produtos.length;
+
+console.log(`ATIVIDADE 14: MÉDIA DOS PREÇOS DE PRODUTOS =  R$ ${mediaPreço.toFixed(2)}`);
