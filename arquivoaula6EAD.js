@@ -51,7 +51,11 @@ let novoArray = produtos.map(produto => {
     precodesconto: (produto.preco * 0.90).toFixed(2)
   };
 });
-console.log('ATIVIDADE 6: NOVO ARRAY COM DESCONTO =', novoArray);
+console.log('ATIVIDADE 6: NOVO ARRAY COM DESCONTO:');
+
+for (let produto of novoArray) {
+  console.log(`${produto.nome} - R$ ${produto.precoorigem} → R$ ${produto.precodesconto}`);
+}
 console.log();
 
 //ATIVIDADE 7 = SOMA TOTAL DE UNIDADES EM ESTOQUE (TODOS OS PRODUTOS)//
@@ -126,3 +130,13 @@ let somaPreço = produtos.reduce((total, produto) => total + produto.preco, 0);
 let mediaPreço = somaPreço / produtos.length;
 
 console.log(`ATIVIDADE 14: MÉDIA DOS PREÇOS DE PRODUTOS =  R$ ${mediaPreço.toFixed(2)}`);
+console.log();
+
+//ATIVIDADE 15 = NOVO ARRAY COM PRODUTOS ACIMA DE 30 VENDAS//
+let array30acima = produtos
+.filter(produto => produto.vendidos > 30)
+.map(produto => ({
+  nome: produto.nome,
+  vendidos: produto.vendidos
+}));
+console.log('ATIVIDADE 15: PRODUTOS ACIMA DE 30 VENDAS', array30acima);
