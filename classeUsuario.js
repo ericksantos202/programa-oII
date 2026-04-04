@@ -1,4 +1,4 @@
-class SistemaUsuario {
+class SistemaUsuario { 
     #email;
     #senha;
 
@@ -31,7 +31,10 @@ class SistemaUsuario {
 
 }
 
-let usuario = new SistemaUsuario("Erick", "2005@gmail.com", "2005");
+/////////////////////////////////////////////////////////////////////////////
+
+console.log('TESTE 1: senha com 8 caracteres');
+let usuario = new SistemaUsuario("Erick", "2005@gmail.com", "2005erick");
 
 console.log(usuario.info());
 
@@ -41,3 +44,10 @@ console.log(usuario.email);
 
 usuario.senha = "novasenha";
 console.log(usuario.autenticar("novasenha")); 
+
+///////////////////////////////////////////////////////////////////////////////
+
+console.log();
+console.log('TESTE 2: senha com menos caracteres');
+let usuario2 = new SistemaUsuario("Erick", "2005@gmail.com", "123");
+console.log(usuario2.autenticar("123"));
