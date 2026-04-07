@@ -1,7 +1,13 @@
 {
-    "nome": "João",
-    "idade": 28,
-    "email": "joao@email.com",
-    "ativo": true,
-    "telefone": null
+  "nome": "kaua alexandre",
+  "idade": 17,
+  "email": "kaua@email.com",
+  "ativo": true,
+  "telefone": null,
+  "skills": ["JavaScript", "Node.js", "React"],
+  "endereco": {
+    "rua": "Av. Principal",
+    "numero": 123,
+    "cidade": "São Paulo"
+  }
 }
