@@ -1,6 +1,6 @@
 function mostrarUsuarios(lista) {
     lista.forEach(usuario => {
-        console.log(`Nome: ${usuario.name} | Email: ${usuario.email}`);
+        console.log(`Nome: ${usuario.name} - Email: ${usuario.email}`);
     });
 }
 
