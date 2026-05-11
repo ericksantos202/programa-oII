@@ -1,0 +1,21 @@
+[11/05/2026, 19:50:12] Programa iniciado
+[11/05/2026, 19:50:12] Produto cadastrado com sucesso
+[11/05/2026, 19:50:12] Erro ao calcular desconto
+[11/05/2026, 19:50:45] Programa iniciado
+[11/05/2026, 19:50:45] Produto cadastrado com sucesso
+[11/05/2026, 19:50:45] Erro ao calcular desconto
+[11/05/2026, 19:51:08] Programa iniciado
+[11/05/2026, 19:51:08] Produto cadastrado com sucesso
+[11/05/2026, 19:51:08] Erro ao calcular desconto
+[11/05/2026, 19:51:30] Programa iniciado
+[11/05/2026, 19:51:30] Produto cadastrado com sucesso
+[11/05/2026, 19:51:30] Erro ao calcular desconto
+[11/05/2026, 19:53:25] Programa iniciado
+[11/05/2026, 19:53:25] Produto cadastrado com sucesso
+[11/05/2026, 19:53:25] Erro ao calcular desconto
+[11/05/2026, 19:55:26] Programa iniciado
+[11/05/2026, 19:55:26] Produto cadastrado com sucesso
+[11/05/2026, 19:55:26] Erro ao calcular desconto
+[11/05/2026, 19:55:46] Programa iniciado
+[11/05/2026, 19:55:46] Produto cadastrado com sucesso
+[11/05/2026, 19:55:46] Erro ao calcular desconto
